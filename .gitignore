@@ -1,0 +1,8 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Neodata.Localhost.slnx/v18
+/.vs
+/obj/Debug
+/.gitignore
