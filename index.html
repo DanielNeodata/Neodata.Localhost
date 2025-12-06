@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+    <title>Neodata - Prueba y desarrollo</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="white" />
+    <meta name="description" content="Loyal Support" />
+
+    <link rel="icon" type="image/png" href="favicon.ico" />
+    <link rel="stylesheet" href="index.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link async=async href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="index.js"></script>
+</head>
+<body class="p-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-1">
+                <img src="logo.png" style="width:100%;"/>
+            </div>
+            <div class="col-11">
+                <h3>Servidor de trabajo</h3>
+                <h4>Accesos de prueba y producción</h4>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-6">
+                <h5>Local</h5>
+                <hr />
+            </div>
+            <div class="col-6">
+                <h5>Producción</h5>
+                <hr />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="row items-locales"></div>
+            </div>
+            <div class="col-6">
+                <div class="row items-online"></div>
+            </div>
+        </div>
+        <hr />
+    </div>
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+        addItem(".items-locales", "http://localhost:8890", "Credipaz Direct", "img/direct.png", "btn-success");
+        addItem(".items-locales", "http://localhost:8889", "Credipaz documentación", "img/documentacion.jpg", "btn-success");
+        addItem(".items-locales", "http://localhost:41000", "Cloud Capture", "favico.ico", "btn-success");
+        addItem(".items-locales", "http://localhost:2000", "Británico", "assets/img/small.png", "btn-success");
+        addItem(".items-locales", "http://localhost:10000", "Neohub", "assets/icons/favicon.ico", "btn-success");
+        addItem(".items-locales", "http://localhost:1100", "Intranet Credipaz", "favicon.ico", "btn-success");
+        addItem(".items-locales", "http://localhost:1600", "Onboarding CP", "favicon.ico", "btn-success");
+        addItem(".items-locales", "http://localhost:1555", "Tienda MIL - Cliente", "favico.ico", "btn-success");
+        addItem(".items-locales", "http://localhost:1100/tiendamil", "Tienda MIL - Vendedor", "../assets/img/milenvivo.png", "btn-success");
+        addItem(".items-locales", "http://localhost:1350", "PWA Credipaz", "icons/credipaz/maskable_icon_x48.png", "btn-success");
+        addItem(".items-locales", "http://localhost:1353", "PWA Mediya", "icons/mediya/maskable_icon_x48.png", "btn-success");
+        addItem(".items-locales", "http://localhost:2001", "Disidentes", "favicon.ico", "btn-success");
+        addItem(".items-locales", "http://localhost:8500", "Legalizaciones", "img/logo.png", "btn-success");
+        addItem(".items-locales", "http://localhost:3000", "Legalizaciones - Viejo", "assets/img/watermark.jpg", "btn-success");
+
+        addItem(".items-online", "https://direct.credipaz.com", "Credipaz Direct", "img/direct.png", "btn-primary");
+        addItem(".items-online", "https://documentacion.credipaz.com", "Credipaz documentación", "img/documentacion.jpg", "btn-primary");
+        addItem(".items-online", "http://clientes.cloud-capture.cl", "Cloud Capture", "favico.ico", "btn-primary");
+        addItem(".items-online", "https://sistema.cementeriobritanico.org.ar", "Británico", "assets/img/small.png", "btn-primary");
+        addItem(".items-online", "https://neohub.gruponeodata.com", "Neohub", "assets/icons/favicon.ico", "btn-primary");
+        addItem(".items-online", "https://intranet.credipaz.com", "Intranet Credipaz", "favicon.ico", "btn-primary");
+        addItem(".items-online", "https://totem.credipaz.com", "Totem CP", "favicon.ico", "btn-primary");
+        addItem(".items-online", "https://tiendamil.credipaz.com", "Tienda MIL - Cliente", "favico.ico", "btn-primary");
+        addItem(".items-online", "https://intranet.credipaz.com/tiendamil", "Tienda MIL - Vendedor", "../assets/img/milenvivo.png", "btn-primary");
+        addItem(".items-online", "https://pwa.mediya.com.ar", "PWA Mediya", "icons/MediYa/favico.ico", "btn-primary");
+        addItem(".items-online", "https://app.credipaz.com", "PWA Credipaz", "icons/credipaz/maskable_icon_x48.png", "btn-primary");
+        addItem(".items-online", "https://disidentes.gruponeodata.com", "Disidentes", "favicon.ico", "btn-primary");
+        addItem(".items-online", "https://legalizaciones.traductores.ar", "Legalizaciones - San Isidro", "img/logo.png", "btn-primary");
+        addItem(".items-online", "https://legalizacionesbb.com.ar", "Legalizaciones - Bahía Blanca", "assets/img/watermark_bahiablanca.jpg", "btn-primary");
+        addItem(".items-online", "https://ctprn.com/sistemas/", "Legalizaciones - Río Negro", "assets/img/watermark_rionegro.jpg", "btn-primary");
+        addItem(".items-online", "https://legalizaciones.traductoresmoron.org.ar", "Legalizaciones - Morón", "assets/img/watermark_moron.jpg", "btn-primary");
+        addItem(".items-online", "https://legalizacionesmdp.com.ar", "Legalizaciones - Mar del Plata", "assets/img/watermark_bahiablanca.jpg", "btn-primary");
+    });
+</script>
